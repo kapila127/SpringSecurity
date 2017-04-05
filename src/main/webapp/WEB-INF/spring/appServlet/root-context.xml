@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">-->
+
+	<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<!-- Root Context: defines shared resources visible to all other web components -->
+<context:annotation-config />
+ <!-- Scans the classpath for annotated components that will be auto-registered as Spring beans.
+   For example @Controller and @Service. Make sure to set the correct base-package-->
+ <context:component-scan base-package="controller" />
+  
+ <!-- Configures the annotation-driven Spring MVC Controller programming model.
+  Note that, with Spring 3.0, this tag works in Servlet MVC only!  
+  See Spring Reference 15.12 Configuring Spring MVC
+  @ http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/mvc.html#mvc-annotation-driven-->
+ <tx:annotation-driven /> 
+  
+ <!-- Without the following adapter, we'll get a "Does your handler implement a supported interface like Controller?"
+  This is because mvc:annotation-driven element doesn't declare a SimpleControllerHandlerAdapter
+  For more info 
+  See http://stackoverflow.com/questions/3896013/no-adapter-for-handler-exception 
+  See http://forum.springsource.org/showthread.php?t=48372&highlight=UrlFilenameViewController -->
+ 
+ 
+ 
+</beans>
